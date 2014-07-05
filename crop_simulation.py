@@ -5,7 +5,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 from radio_button_widget_class import *
-from manual_grow_dialog_class import *
+##from manual_grow_dialog_class import *
 from wheat_class import *
 from potato_class import*
 
@@ -17,7 +17,7 @@ class CropWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Crop Simulator")
         self.create_select_crop_layout()
-        self.stacked_layout=QSracked_layout()
+        self.stacked_layout=QStackedLayout()
         self.stacked_layout.addWidget(self.select_crop_widget)
         self.central_widget=QWidget()
         self.central_widget.setLayout(self.stacked_layout)
@@ -34,9 +34,9 @@ class CropWindow(QMainWindow):
         self.instantiate_button.clicked.connect(self.instantiate_crop)
 
     def create_view_crop_layout(self,crop_type):
-        self.growth_label=Qlabel("Growth")
-        self.days_label=Qlabel("Days Growing")
-        self.status_label=Qlabel("Crop Status")
+        self.growth_label=QLabel("Growth")
+        self.days_label=QLabel("Days Growing")
+        self.status_label=QLabel("Crop Status")
         
         self.growth_line_edit=QLineEdit()
         self.days_line_edit=QLineEdit()
