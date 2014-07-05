@@ -5,7 +5,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 from radio_button_widget_class import *
-##from manual_grow_dialog_class import *
+from manual_grow_dialog_class import *
 from wheat_class import *
 from potato_class import*
 
