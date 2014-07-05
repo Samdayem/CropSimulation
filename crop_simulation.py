@@ -6,6 +6,7 @@ from PyQt4.QtGui import *
 
 from radio_button_widget_class import *
 from manual_grow_dialog_class import *
+from crop_view_class import *
 from wheat_class import *
 from potato_class import*
 
@@ -41,6 +42,11 @@ class CropWindow(QMainWindow):
         self.growth_line_edit=QLineEdit()
         self.days_line_edit=QLineEdit()
         self.status_line_edit=QLineEdit()
+
+        if crop_type == 1:
+            self.crop_view = WheatView()
+        elif crop_type == 2:
+            self.crop_view = PotatoView()
         
         self.manual_grow_button=QPushButton("Manually Grow")
         self.automatic_grow_button=QPushButton("Automatically Grow")
@@ -55,7 +61,8 @@ class CropWindow(QMainWindow):
         self.status_grid.addWidget(self.growth_line_edit,0,1)
         self.status_grid.addWidget(self.days_line_edit,1,1)
         self.status_grid.addWidget(self.status_line_edit,2,1)
-        
+
+        self.grow_grid.addWidget(self.crop_view,0,0)
         self.grow_grid.addLayout(self.status_grid,0,1)
         self.grow_grid.addWidget(self.manual_grow_button,1,0)
         self.grow_grid.addWidget(self.automatic_grow_button,1,1)
